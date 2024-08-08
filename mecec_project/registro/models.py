@@ -12,14 +12,14 @@ class Registro(models.Model):
     celular = models.CharField(max_length=20)
     domicilio_actual = models.CharField(max_length=255)
     correo_electronico = models.EmailField()
-    foto = models.ImageField(upload_to='fotos/')
+    foto = models.ImageField(upload_to='static/fotos/')
     ministerio = models.CharField(max_length=100)
     registro = models.CharField(max_length=100)
     tipo_pabellon = models.CharField(max_length=100)
     numero_pabellon = models.CharField(max_length=100)
     seccion_pabellon = models.CharField(max_length=100)
     otros_pabellon = models.CharField(max_length=255, blank=True, null=True)
-    autorizacion_iglesia = models.FileField(upload_to='autorizaciones/')
+    autorizacion_iglesia = models.FileField(upload_to='static/autorizaciones/')
 
     def __str__(self):
         return f'{self.apellido}, {self.nombres} ({self.dni})'
