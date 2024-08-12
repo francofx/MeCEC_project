@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from .forms import RegistroForm, Registro 
+from django.contrib.auth.decorators import login_required
 
 def home(request):
     return render(request, 'home.html')
@@ -16,6 +17,7 @@ def formulario(request):
         form = RegistroForm()
     return render(request, 'formulario.html', {'form': form})
 
+@login_required
 def listado_registros(request):
     query = request.GET.get('q')
     if query:
