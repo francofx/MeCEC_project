@@ -4,3 +4,4 @@ venv/
 *.sqlite3
 *.log
 .env
+mecec_project/static/
