@@ -32,7 +32,7 @@
                     {% for registro in registros %}
                     <tr>
                         <td>{{ registro.apellido }}</td>
-                        <td>{{ registro.nombres }}</td>
+                        <td><a href="{% url 'registro:registro_detalle' registro.id %}">{{ registro.nombres }}</a></td>
                         <td>{{ registro.dni }}</td>
                         <td>{{ registro.ciudad }}</td>
                         <td>{{ registro.provincia }}</td>

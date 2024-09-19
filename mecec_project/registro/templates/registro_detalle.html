@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle del Registro</title>
+    <style>
+        .carnet {
+            width: 300px;
+            padding: 20px;
+            border: 2px solid #000;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        .carnet img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+        .carnet h2 {
+            margin: 10px 0;
+            font-size: 1.5rem;
+        }
+        .carnet p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="carnet">
+        <img src="{{ registro.foto.url }}" alt="Foto de {{ registro.nombre }}">
+        <h2>{{ registro.nombre }} {{ registro.apellido }}</h2>
+        <p><strong>Ciudad:</strong> {{ registro.ciudad }}</p>
+        <p><strong>DNI:</strong> {{ registro.dni }}</p>
+        <p><strong>Celular:</strong> {{ registro.celular }}</p>
+            
+        {% if registro.activo %}
+                <span>Activo</span>
+        {% else %}
+                <span style="color: red;">Vencido</span>
+        {% endif %}
+
+    </div>
+</body>
+</html>
