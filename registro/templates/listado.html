@@ -13,7 +13,10 @@
             <h2 class="mt-5">Listado de Registros</h2>
             <form method="get" action="{% url 'registro:listado_registros' %}">
                 <div class="mb-3">
-                    <input type="text" name="q" class="form-control" placeholder="Buscar por nombre" value="{{ request.GET.q }}">
+                    <input type="text" name="apellido" class="form-control" placeholder="Apellido" value="{{ request.GET.apellido }}">
+                    <input type="text" name="nombre" class="form-control" placeholder="Buscar por nombre" value="{{ request.GET.nombre }}">
+                    <input type="text" name="dni" class="form-control" placeholder="DNI" value="{{ request.GET.dni }}">
+                    
                 </div>
                 <button type="submit" class="btn btn-primary">Buscar</button>
             </form>

@@ -25,7 +25,21 @@ def listado_registros(request):
         registros = Registro.objects.filter(nombres__icontains=query)
     else:
         registros = Registro.objects.all().order_by('ministerio')
-        
+        #filtros
+        nombre = request.GET.get('nombre')
+        apellido = request.GET.get('apellido')
+        dni = request.GET.get('dni')
+        activo = request.GET.get('activo')
+
+        if nombre:
+            registros = registros.filter(nombres__icontains=nombre)
+        if apellido:
+            registros = registros.filter(apellido__icontains=apellido)
+        if dni:
+            registros = registros.filter(dni__icontains=dni)
+        if activo is not None:
+            registros = registros.filter(activo=activo)
+        #end filtros
     return render(request, 'listado.html', {'registros': registros})
 
 def registro_detalle(request, id):
