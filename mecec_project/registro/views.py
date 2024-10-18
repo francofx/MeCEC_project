@@ -6,8 +6,6 @@ from django.contrib.auth.decorators import login_required
 def home(request):
     return render(request, 'home.html')
 
-
-
 def formulario(request):
     if request.method == 'POST':
         form = RegistroForm(request.POST, request.FILES)
