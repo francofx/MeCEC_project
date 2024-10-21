@@ -12,13 +12,27 @@
         <div class="container">
             <h2 class="mt-5">Listado de Registros</h2>
             <form method="get" action="{% url 'registro:listado_registros' %}">
-                <div class="mb-3">
-                    <input type="text" name="apellido" class="form-control" placeholder="Apellido" value="{{ request.GET.apellido }}">
-                    <input type="text" name="nombre" class="form-control" placeholder="Buscar por nombre" value="{{ request.GET.nombre }}">
-                    <input type="text" name="dni" class="form-control" placeholder="DNI" value="{{ request.GET.dni }}">
-                    
+                <div class="row mb-3">
+                    <div class="col">
+                        <input type="text" name="apellido" placeholder="Buscar por Apellido" value="{{ request.GET.apellido }}" class="form-control">
+                    </div>
+                    <div class="col">
+                        <input type="text" name="nombre" class="form-control" placeholder="Buscar por nombre" value="{{ request.GET.nombre }}">
+                    </div>
+                    <div class="col">
+                        <input type="text" name="dni" class="form-control" placeholder="DNI" value="{{ request.GET.dni }}">
+                    </div>
+                    <div class="col">
+                        <select name="activo" class="form-control">
+                            <option value="1" {% if activo == '1' %}selected{% endif %}>Activo</option>
+                            <option value="0" {% if activo == '0' %}selected{% endif %}>Inactivo</option>
+                        </select>
+                    </div>
                 </div>
-                <button type="submit" class="btn btn-primary">Buscar</button>
+                <div class="col">
+                    <button type="submit" class="btn btn-primary">Buscar</button>
+                </div>
+                
             </form>
             <table class="table table-striped">
                 <thead>
