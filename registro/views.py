@@ -3,6 +3,7 @@ from .forms import RegistroForm, Registro
 from django.contrib.auth.decorators import login_required
 from .models import Registro
 
+
 def home(request):
     return render(request, 'home.html')
 
@@ -45,4 +46,3 @@ def listado_registros(request):
 def registro_detalle(request, id):
     registro = get_object_or_404(Registro, id=id)
     return render(request, 'registro_detalle.html', {'registro': registro})
-
