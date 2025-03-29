@@ -14,7 +14,7 @@
         <form method="post" enctype="multipart/form-data">
             {% csrf_token %}
             <div class="form-group mb-3">
-                <label for="apellido" class="form-label">APELLIDO</label>
+                <label for="apellido" class="form-label" placeholder="Ingrese su apellido" required>APELLIDOa</label>
                 {{ form.apellido|add_class:"form-control" }}
             </div>
             <div class="form-group mb-3">

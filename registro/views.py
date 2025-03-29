@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .forms import RegistroForm, Registro 
 from django.contrib.auth.decorators import login_required
 from .models import Registro
+from django.urls import reverse
+
 
 
 def home(request):
@@ -46,3 +48,16 @@ def listado_registros(request):
 def registro_detalle(request, id):
     registro = get_object_or_404(Registro, id=id)
     return render(request, 'registro_detalle.html', {'registro': registro})
+
+def control_view(request):
+    if request.method == "POST":
+        dni = request.POST.get('dni')  # Obtiene el DNI ingresado
+        if dni:
+            registro = Registro.objects.filter(dni=dni).first()  # Busca el registro por DNI
+            if registro:
+                return redirect(reverse('registro:registro_detalle', args=[registro.id]))  # Corrige el namespace
+    return render(request, 'registro/control.html')
+
+def carnet_view(request, dni):
+    registro = get_object_or_404(Registro, dni=dni)  # Buscar por DNI en el modelo Registro
+    return render(request, 'registro/carnet.html', {'registro': registro})

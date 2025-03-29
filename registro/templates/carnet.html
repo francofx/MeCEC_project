@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <h3>Carnet del Asistente Espiritual</h3>
+    <p><strong>Nombre:</strong> {{ asistente.nombre }} {{ asistente.apellido }}</p>
+    <p><strong>DNI:</strong> {{ asistente.dni }}</p>
+    <p><strong>Unidad Carcelaria:</strong> {{ asistente.unidad_carcelaria }}</p>
+    <p><strong>Estado:</strong> 
+        {% if asistente.activo %}
+            <span class="text-success">Vigente</span>
+        {% else %}
+            <span class="text-danger">Vencido</span>
+        {% endif %}
+    </p>
+</div>
+{% endblock %}

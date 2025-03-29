@@ -11,4 +11,6 @@ urlpatterns = [
     path('formulario/', views.formulario, name='formulario'),
     path('listado/', views.listado_registros, name='listado_registros'),
     path('registro/<int:id>/', views.registro_detalle, name='registro_detalle'),
+    path('control/', views.control_view, name='control'),
+    path('carnet/<int:dni>/', views.carnet_view, name='carnet'),
 ]

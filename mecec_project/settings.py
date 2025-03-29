@@ -9,6 +9,8 @@ https://docs.djangoproject.com/en/5.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
+#esto lo agregue para que funsiones en la notebook
+import os
 
 from pathlib import Path
 
@@ -25,7 +27,7 @@ SECRET_KEY = 'django-insecure-ft^#=!#je^7y5(j=6b@-5axgthd@i-upfk_wrh43w7&8_=3=ze
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["192.168.3.33"]
 
 
 # Application definition
@@ -55,7 +57,7 @@ ROOT_URLCONF = 'mecec_project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],  # Asegura que esté configurado
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -116,8 +118,13 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
+
+
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [BASE_DIR / "static"]
+
+#esto lo agregue para que funsiones en la notebook
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 
 # Default primary key field type
