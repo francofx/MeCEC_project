@@ -7,7 +7,13 @@
     <h1>Bienvenido a MeCEC</h1>
     <p>La MeCEC tiene por finalidad la asistencia espiritual cristiana evangélica de los internos por medio de la evangelización y propagación de las sagradas escrituras, colaborando con el servicio penitenciario en la pacificación de la vida carcelaria y la reinserción social de las personas privadas de su libertad. comprometiéndose a respetar y someter su labor a las reglamentaciones del servicio penitenciario.</p>
     <a href="{% url 'registro:formulario' %}" class="btn btn-primary">Cargar Formulario</a>
-            <!--<div class="alert alert-danger" role="alert">
-            Les informamos que el periodo de inscripción ha concluido. Se comunicara oportunamente la apertura de un nuevo periodo de registro.
-            </div>-->
+    <!-- En tu archivo template.html -->
+    <a href="https://docs.google.com/forms/d/1yDgoAPF5H3-D8FWcCnBySvSmOYYobmLa9jiuHGC7Uto/viewform?edit_requested=true" 
+    target="_blank" 
+    class="btn btn-primary">
+    Solicitar Certificado de Antecedentes Penales
+    </a>
+    <!--<div class="alert alert-danger" role="alert">
+    Les informamos que el periodo de inscripción ha concluido. Se comunicara oportunamente la apertura de un nuevo periodo de registro.
+    </div>-->
 {% endblock %}

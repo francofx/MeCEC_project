@@ -5,3 +5,5 @@ venv/
 *.log
 .env
 mecec_project/static/
+mecec_project/settings.py
+.gitignore
